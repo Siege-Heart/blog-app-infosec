@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Blog Web Application - Activity 4
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Full-stack MERN Application with JWT Authentication
 
-## Available Scripts
+### 🚀 Features
+- **User Authentication**: JWT-based registration and login
+- **Role-based Access**: User vs Admin permissions  
+- **Blog Management**: Create, view blog posts
+- **Comment System**: Authenticated users can comment
+- **Admin Dashboard**: User management and data overview
+- **MongoDB Atlas**: Cloud database integration
+- **Protected Routes**: Middleware for secure access
 
-In the project directory, you can run:
+### 🛠️ Tech Stack
+- **Frontend**: React 19, React Router 7, Bootstrap 5
+- **Backend**: Express 5, Node.js
+- **Database**: MongoDB Atlas with Mongoose ODM
+- **Authentication**: JSON Web Tokens (JWT)
+- **Development**: Concurrently for full-stack dev
 
-### `npm start`
+### 📁 Project Structure
+myblog/
+├── backend/ # Express API Server
+│ ├── config/ # Database configuration
+│ ├── controllers/ # Auth, blog, comment, user controllers
+│ ├── middleware/ # JWT protect and admin middleware
+│ ├── models/ # User, BlogPost, Comment schemas
+│ ├── routes/ # API route definitions
+│ └── server.js # Main server (port 5001)
+├── src/ # React Frontend
+│ ├── components/ # Reusable UI components
+│ ├── pages/admin/ # Admin pages
+│ ├── App.js # Main routing component
+│ └── index.js # React entry point
+└── package.json # Full-stack dependencies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ⚡ Quick Start
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/blog-app-activity4.git
+   cd myblog
 
-### `npm test`
+2. **Install Dependencies**
+    npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Environment Setup**
+    PORT=5001
+    MONGO_URI=your_mongodb_atlas_connection_string
+    JWT_SECRET=your_super_secret_key_here
 
-### `npm run build`
+4. **Run the Application**
+    # Run both frontend and backend
+    npm run dev
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    # Or separately:
+    # Terminal 1: npm run backend  # Backend on port 5001
+    # Terminal 2: npm start        # Frontend on port 3000
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. **Access the Application**
+    - Frontend: http://localhost:3000
+    - Backend API: http://localhost:5001
+    - API Test: http://localhost5001/api/test
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Default Usage
 
-### `npm run eject`
+1. Register a new account (choose "Admin" role for admin access)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Login with your credentials
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Admins can create posts via Dashboard or Create Post page
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Users can view posts and add comments
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. Admins can view all users, posts, and comments in Dashboard
 
-## Learn More
+### 🔐 API Endpoints
+Method	    Endpoint	            Description	        Access
+POST	    /api/auth/register	    User registration	Public
+POST	    /api/auth/login	        User login	        Public
+GET	        /api/blog	            Get all posts	    Public
+POST	    /api/blog	            Create post	        Admin only
+GET	        /api/blog/:id	        Get single post	    Public
+POST	    /api/comments	        Add comment	        Authenticated
+GET	        /api/comments/:postId	Get post comments	Public
+GET	        /api/users	            Get all users	    Admin only
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Group Members
+- Gonzales, Charles Andrew R.
+- Corpuz, Jullienne Viktoria
+- Medina, Gelli Mariz
+- Peralta, Keith Clarence
+- Salvador, Lawrence Nero
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Important Notes
+- Never commit .env files to version control
+- Use strong JWT secrets in production
+- MongoDB Atlas connection string required
+- Admin role required for post creation
