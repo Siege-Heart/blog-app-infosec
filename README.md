@@ -1,5 +1,3 @@
-# Blog Web Application - Activity 4
-
 ## Full-stack MERN Application with JWT Authentication
 
 ### 🚀 Features
@@ -18,8 +16,9 @@
 - **Authentication**: JSON Web Tokens (JWT)
 - **Development**: Concurrently for full-stack dev
 
-### 📁 Project Structure
+## Project Structure
 
+```text
 myblog/
 ├── backend/
 │   ├── config/
@@ -57,16 +56,18 @@ myblog/
 │   │   ├── Contact.js
 │   │   ├── Footer.js
 │   │   └── LogoutModal.js
-│   ├── pages/admin/
-│   │   ├── AdminDashboard.js
-│   │   ├── AdminPostList.js
-│   │   ├── CreatePostPage.js
-│   │   └── AdminPostEdit.js
+│   ├── pages/
+│   │   └── admin/
+│   │       ├── AdminDashboard.js
+│   │       ├── AdminPostList.js
+│   │       ├── CreatePostPage.js
+│   │       └── AdminPostEdit.js
 │   ├── App.js
 │   └── index.js
 ├── .gitignore
 ├── package.json
 └── README.md
+```
 
 ### ⚡ Quick Start
 
