@@ -20,64 +20,53 @@
 
 ### 📁 Project Structure
 
-myblog/                              # ROOT PROJECT DIRECTORY
-│
-├── backend/                         # EXPRESS BACKEND SERVER
+myblog/
+├── backend/
 │   ├── config/
-│   │   └── db.js                    # MongoDB connection configuration
-│   │
-│   ├── controllers/                 # BUSINESS LOGIC CONTROLLERS
-│   │   ├── authController.js        # User registration & login
-│   │   ├── blogPostController.js    # Blog post CRUD operations
-│   │   ├── commentController.js     # Comment management
-│   │   └── userController.js        # User data management
-│   │
-│   ├── middleware/                  # AUTHENTICATION MIDDLEWARE
-│   │   └── authMiddleware.js        # JWT protect() & admin() middleware
-│   │
-│   ├── models/                      # MONGOOSE DATA MODELS
-│   │   ├── userModel.js             # User schema with role field
-│   │   ├── blogPostModel.js         # Blog post schema
-│   │   └── commentModel.js          # Comment schema with references
-│   │
-│   ├── routes/                      # API ROUTE DEFINITIONS
-│   │   ├── authRoutes.js            # /api/auth endpoints
-│   │   ├── blogRoutes.js            # /api/blog endpoints
-│   │   ├── commentRoutes.js         # /api/comments endpoints
-│   │   └── userRoutes.js            # /api/users endpoints
-│   │
-│   ├── .env                         # ENVIRONMENT VARIABLES (not committed)
-│   └── server.js                    # MAIN EXPRESS SERVER (port 5001)
-│
-├── src/                             # REACT FRONTEND APPLICATION
-│   ├── components/                  # REUSABLE UI COMPONENTS
-│   │   ├── AppNavbar.js             # Navigation bar with role-based menu
-│   │   ├── Login.js                 # User login form with JWT handling
-│   │   ├── Register.js              # User registration form
-│   │   ├── HomePage.js              # Blog post listing page
-│   │   ├── SinglePostView.js        # Individual post with comments
-│   │   ├── CommentSection.js        # Comment input and display
-│   │   ├── Dashboard.js             # User dashboard (basic)
-│   │   ├── AdminPost.js             # Simple admin post creation
-│   │   ├── About.js                 # About page
-│   │   ├── Services.js              # Services page
-│   │   ├── Contact.js               # Contact page
-│   │   ├── Footer.js                # Site footer
-│   │   └── LogoutModal.js           # Logout confirmation modal
-│   │
-│   ├── pages/admin/                 # ADMIN-ONLY PAGES
-│   │   ├── AdminDashboard.js        # Admin overview with all data
-│   │   ├── AdminPostList.js         # List all posts for management
-│   │   ├── CreatePostPage.js        # Advanced post creation form
-│   │   └── AdminPostEdit.js         # Post editing interface
-│   │
-│   ├── App.js                       # MAIN APP WITH ROUTING & AUTH STATE
-│   └── index.js                     # REACT ENTRY POINT (with Bootstrap)
-│
-├── .gitignore                       # GIT IGNORE RULES
-├── package.json                     # FULL-STACK DEPENDENCIES & SCRIPTS
-├── README.md                        # PROJECT DOCUMENTATION
-└── (node_modules)                   # DEPENDENCIES (not committed)
+│   │   └── db.js
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── blogPostController.js
+│   │   ├── commentController.js
+│   │   └── userController.js
+│   ├── middleware/
+│   │   └── authMiddleware.js
+│   ├── models/
+│   │   ├── userModel.js
+│   │   ├── blogPostModel.js
+│   │   └── commentModel.js
+│   ├── routes/
+│   │   ├── authRoutes.js
+│   │   ├── blogRoutes.js
+│   │   ├── commentRoutes.js
+│   │   └── userRoutes.js
+│   ├── .env
+│   └── server.js
+├── src/
+│   ├── components/
+│   │   ├── AppNavbar.js
+│   │   ├── Login.js
+│   │   ├── Register.js
+│   │   ├── HomePage.js
+│   │   ├── SinglePostView.js
+│   │   ├── CommentSection.js
+│   │   ├── Dashboard.js
+│   │   ├── AdminPost.js
+│   │   ├── About.js
+│   │   ├── Services.js
+│   │   ├── Contact.js
+│   │   ├── Footer.js
+│   │   └── LogoutModal.js
+│   ├── pages/admin/
+│   │   ├── AdminDashboard.js
+│   │   ├── AdminPostList.js
+│   │   ├── CreatePostPage.js
+│   │   └── AdminPostEdit.js
+│   ├── App.js
+│   └── index.js
+├── .gitignore
+├── package.json
+└── README.md
 
 ### ⚡ Quick Start
 
